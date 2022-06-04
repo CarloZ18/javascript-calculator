@@ -29,6 +29,7 @@ body {
 #memory {
   display: flex;
   font-size: 20px;
+  color:rgb(255, 153, 0); 
   font-family: Roboto;
   padding-right: 50px;
   align-items: center;

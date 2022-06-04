@@ -1,7 +1,7 @@
-const MemoryDisplay = ()=>{
+const MemoryDisplay = ({memoryDisplay})=>{
 return(
     <div id="memory">
-        
+        {memoryDisplay}
     </div>
 )
 }

@@ -1,17 +1,24 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 
-const Operators = ({ pressNum, clearDisplay, deleteLastNum }) => {
+const Operators = ({
+  pressNum,
+  clearDisplay,
+  deleteLastNum,
+  changeSimbol,
+  addDecimal,
+  porcentage,
+}) => {
   return (
     <div id="operators">
       <div>
         <button id="clear" className="operatorGray" onClick={clearDisplay}>
           C
         </button>
-        <button id="simbol" className="operatorGray">
+        <button id="simbol" className="operatorGray" onClick={changeSimbol}>
           +/-
         </button>
-        <button id="portentage" className="operatorGray">
+        <button id="portentage" className="operatorGray" onClick={porcentage}>
           %
         </button>
         <button id="divide" className="operatorOrange">
@@ -99,13 +106,18 @@ const Operators = ({ pressNum, clearDisplay, deleteLastNum }) => {
         >
           0
         </button>
-        <button id="decimal" className="operatorBlack" value=".">
+        <button
+          id="decimal"
+          className="operatorBlack"
+          value="."
+          onClick={addDecimal}
+        >
           .
         </button>
         <button id="remove" className="operatorBlack" onClick={deleteLastNum}>
           <FontAwesomeIcon icon={faBackspace} />
         </button>
-        <button id="equals" className="operatorOrange" value='='>
+        <button id="equals" className="operatorOrange" value="=">
           =
         </button>
       </div>

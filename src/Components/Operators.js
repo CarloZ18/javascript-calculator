@@ -3,15 +3,11 @@ import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 
 
 const Operators = ({
-  pressNum,
+  addNum,
   clearDisplay,
   deleteLastNum,
   addDecimal,
-  porcentage,
-  divide,
-  subtract,
-  sum,
-  multiply,
+ handleOperator,
   equal,
 }) => {
   return (
@@ -28,12 +24,12 @@ const Operators = ({
           </button>
         </div>
         <div>
-        <button id="divide" className="operatorOrange" onClick={divide}>
+        <button id="divide" className="operatorOrange" value="/" onClick={handleOperator}>
           /
         </button>
         </div>
         <div>
-          <button id="portentage" className="operatorOrange" onClick={porcentage}>
+          <button id="portentage" className="operatorOrange" value="%" onClick={handleOperator}>
             %
           </button>
         </div>
@@ -45,7 +41,7 @@ const Operators = ({
             id="seven"
             className="operatorBlack"
             value="7"
-            onClick={pressNum}
+            onClick={addNum}
           >
             7
           </button>
@@ -56,7 +52,7 @@ const Operators = ({
             id="eight"
             className="operatorBlack"
             value="8"
-            onClick={pressNum}
+            onClick={addNum}
           >
             8
           </button>
@@ -67,7 +63,7 @@ const Operators = ({
             id="nine"
             className="operatorBlack"
             value="9"
-            onClick={pressNum}
+            onClick={addNum}
           >
             9
           </button>
@@ -77,8 +73,8 @@ const Operators = ({
           <button
             id="multiply"
             className="operatorOrange"
-            value="."
-            onClick={multiply}
+            value="*"
+            onClick={ handleOperator}
           >
             x
           </button>
@@ -91,7 +87,7 @@ const Operators = ({
             id="four"
             className="operatorBlack"
             value="4"
-            onClick={pressNum}
+            onClick={addNum}
           >
             4
           </button>
@@ -102,7 +98,7 @@ const Operators = ({
             id="five"
             className="operatorBlack"
             value="5"
-            onClick={pressNum}
+            onClick={addNum}
           >
             5
           </button>
@@ -113,7 +109,7 @@ const Operators = ({
             id="six"
             className="operatorBlack"
             value="6"
-            onClick={pressNum}
+            onClick={addNum}
           >
             6
           </button>
@@ -124,7 +120,7 @@ const Operators = ({
             id="subtract"
             className="operatorOrange"
             value="-"
-            onClick={subtract}
+            onClick={ handleOperator}
           >
             -
           </button>
@@ -137,7 +133,7 @@ const Operators = ({
             id="one"
             className="operatorBlack"
             value="1"
-            onClick={pressNum}
+            onClick={addNum}
           >
             1
           </button>
@@ -148,7 +144,7 @@ const Operators = ({
             id="two"
             className="operatorBlack"
             value="2"
-            onClick={pressNum}
+            onClick={addNum}
           >
             2
           </button>
@@ -159,14 +155,14 @@ const Operators = ({
             id="three"
             className="operatorBlack"
             value="3"
-            onClick={pressNum}
+            onClick={addNum}
           >
             3
           </button>
         </div>
 
         <div>
-          <button id="add" className="operatorOrange" value="+" onClick={sum}>
+          <button id="add" className="operatorOrange" value="+" onClick={ handleOperator}>
             +
           </button>
         </div>
@@ -178,7 +174,7 @@ const Operators = ({
             id="zero"
             className="operatorBlack"
             value="0"
-            onClick={pressNum}
+            onClick={addNum}
           >
             0
           </button>

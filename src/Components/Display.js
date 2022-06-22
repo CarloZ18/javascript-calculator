@@ -1,7 +1,7 @@
-const Display = ({currentDisplay})=>{
+const Display = ({Display})=>{
 return(
     <div id="display">
-{currentDisplay}
+{Display}
     </div>
 )
 }

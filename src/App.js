@@ -8,7 +8,6 @@ function App() {
   const [display, setDisplay] = useState(0);
   const [memoryDisplay, setMemoryDisplay] = useState("");
   const [prevValue, setPrevValue] = useState("0");
-  const [currentDecimal, setCurrentDecimal] = useState("0");
   const [evaluated, setEvaluated] = useState(false);
 
   const endsWithOperator = /[*%+-/]$/,
@@ -54,7 +53,6 @@ function App() {
       setDisplay(0);
       setMemoryDisplay("");
       setPrevValue("0");
-      setCurrentDecimal("0");
       setEvaluated(false);
     }
   };
@@ -68,7 +66,6 @@ function App() {
         setMemoryDisplay(
           memoryDisplay === "0" ? display + value : memoryDisplay + value
         );
-        setCurrentDecimal("0");
       } else if (!endsWithNegativeSign.test(memoryDisplay)) {
         setMemoryDisplay(
           (endsWithNegativeSign.test(memoryDisplay + value)
@@ -76,7 +73,6 @@ function App() {
             : prevValue) + value
         );
         setDisplay(value);
-        setCurrentDecimal("0");
       } else {
         setDisplay(value);
         setMemoryDisplay(prevValue + value);
@@ -89,20 +85,16 @@ function App() {
       setEvaluated(false);
     }
   };
-  console.log(memoryDisplay);
+
   const addDecimal = () => {
-    if (!currentDecimal.includes(".") && !display.includes("DIGIT LIMIT")) {
+    if (!display.includes(".") && !display.includes("DIGIT LIMIT")) {
       if (display.length > 14) {
         alertLimit();
       } else if (endsWithOperator.test(memoryDisplay)) {
         setDisplay("0.");
         setMemoryDisplay(memoryDisplay + "0.");
-        setCurrentDecimal("0.");
       } else {
-        setCurrentDecimal(
-          memoryDisplay.match(/(-?\d+\.?\d*)$/)[0] + ".",
-          setDisplay(display + ".")
-        );
+      setDisplay(display + ".")
         setMemoryDisplay(memoryDisplay + ".");
       }
     }

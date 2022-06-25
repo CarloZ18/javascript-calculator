@@ -2,13 +2,14 @@ import { Operators } from "./Components/Operators";
 import { Display } from "./Components/Display";
 import { MemoryDisplay } from "./Components/MemoryDisplay";
 import "./index.css";
-import { useState } from "react";
+import {  useState } from "react";
 
 function App() {
   const [display, setDisplay] = useState(0);
   const [memoryDisplay, setMemoryDisplay] = useState("");
   const [prevValue, setPrevValue] = useState("0");
   const [evaluated, setEvaluated] = useState(false);
+
 
   const endsWithOperator = /[*%+-/]$/,
     isOperator = /^[*%+-/]/,
@@ -121,9 +122,11 @@ function App() {
       let result = Math.round(10000 * eval(expression)) / 10000;
       setDisplay(result);
       setMemoryDisplay(memoryDisplay + "=" + result);
-    }
-  };
-
+    
+      }
+  }; 
+  
+  
   return (
     <div id="app">
       <div id="calculator">

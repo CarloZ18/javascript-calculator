@@ -1,6 +1,6 @@
 const MemoryDisplay = ({memoryDisplay})=>{
 return(
-    <div id="memory">
+    <div id="memory"  >
         {memoryDisplay}
     </div>
 )
